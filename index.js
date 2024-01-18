@@ -92,3 +92,30 @@ function resta(num1,num2){
 }
 
 resta(13,5)
+
+class Personas{
+  constructor(nombre,libros){
+    this.nombre = nombre;
+    this.libros = libros || [];
+  }
+  
+  set setLibros(libros){
+    this.libros.push(libros);
+  }
+  
+  get getLibros(){
+    return this.libros
+  }
+  
+  buscarlibros(titulo){
+    return this.libros.find((item)=> item.titulo === titulo)
+  }
+}
+
+const personaUno = new Personas("Jesus")
+personaUno.setLibros = {titulo: "Metamorfosis", autor: "Franz Kafka"}
+personaUno.setLibros = {titulo: "El amor en un día", autor: "Nome Lose"}
+
+console.log(personaUno.buscarlibros("Metamorfosis"))
+console.log(personaUno.getLibros)
+
